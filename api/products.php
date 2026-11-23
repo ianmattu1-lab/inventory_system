@@ -1,7 +1,7 @@
 <?php
 ini_set('display_errors', 0);
 
-// Turns a DB row into the JSON the app expects
+//turns a DB row into the JSON the app expects
 function format_product($p) {
     $p['id'] = (int)$p['id'];
     $p['category_id'] = (int)$p['category_id'];
@@ -24,7 +24,7 @@ function get_product($conn, $id) {
     return $row ? format_product($row) : null;
 }
 
-// Validates and saves an uploaded image. Returns the path, or null if none was sent.
+//validates and saves an uploaded image then returns the path, or null if none was sent.
 function save_image() {
     if (!isset($_FILES['image']) || $_FILES['image']['error'] != 0) {
         return null;
@@ -45,12 +45,12 @@ try {
     include '../php/core/db.php';
 
     $method = $_SERVER['REQUEST_METHOD'];
-    // Allow POST with _method=PUT (needed for multipart edits)
+    //allow POST with _method=PUT (needed for multipart edits)
     if ($method == 'POST' && isset($_POST['_method'])) {
         $method = strtoupper($_POST['_method']);
     }
 
-    // ---------------- GET: list products ----------------
+    //GET: list products
     if ($method == 'GET') {
         $sql = "SELECT p.*, c.name AS category_name FROM products p
                 JOIN categories c ON p.category_id = c.id WHERE 1=1";
@@ -78,7 +78,7 @@ try {
         send_json(200, $list);
     }
 
-    // ---------------- POST: create product ----------------
+    //POST: create product
     elseif ($method == 'POST') {
         foreach (['name', 'sku', 'category_id', 'user_id'] as $field) {
             if (empty($_POST[$field])) {
@@ -100,7 +100,7 @@ try {
         send_json(201, get_product($conn, $new_id));
     }
 
-    // ---------------- PUT: update product / adjust stock ----------------
+    //PUT: update product/adjust stock 
     elseif ($method == 'PUT') {
         if ($_SERVER['REQUEST_METHOD'] == 'PUT') {
             parse_str(file_get_contents('php://input'), $data);
@@ -117,7 +117,7 @@ try {
             send_json(404, ['status' => 'error', 'message' => 'Product not found.']);
         }
 
-        // Use the new value if sent, otherwise keep the old one
+        //use the new value if sent, otherwise keep the old one
         $name = $data['name'] ?? $old['name'];
         $sku = $data['sku'] ?? $old['sku'];
         $category_id = (int)($data['category_id'] ?? $old['category_id']);
@@ -148,7 +148,7 @@ try {
         send_json(200, get_product($conn, $id));
     }
 
-    // ---------------- DELETE: remove product ----------------
+    //DELETE: remove product
     elseif ($method == 'DELETE') {
         $id = (int)($_GET['id'] ?? 0);
         $user_id = (int)($_GET['user_id'] ?? 0);
