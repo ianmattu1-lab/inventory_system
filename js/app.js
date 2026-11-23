@@ -1,4 +1,4 @@
-// ---------- Live search + category filter ----------
+//live search and category filter
 var searchBox = document.getElementById('search');
 var catFilter = document.getElementById('catFilter');
 
@@ -17,7 +17,7 @@ if (searchBox) {
   catFilter.addEventListener('change', filterRows);
 }
 
-// ---------- Fill the Edit modal ----------
+//edit modal
 document.querySelectorAll('.edit-btn').forEach(function (btn) {
   btn.addEventListener('click', function () {
     document.getElementById('edit_id').value = btn.dataset.id;
@@ -31,7 +31,7 @@ document.querySelectorAll('.edit-btn').forEach(function (btn) {
   });
 });
 
-// ---------- Fill the Delete modal ----------
+//delete modal
 document.querySelectorAll('.delete-btn').forEach(function (btn) {
   btn.addEventListener('click', function () {
     document.getElementById('delete_id').value = btn.dataset.id;
