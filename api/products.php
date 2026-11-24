@@ -42,7 +42,7 @@ function save_image() {
 }
 
 try {
-    include '../php/core/db.php';
+    include 'core/db.php';
 
     $method = $_SERVER['REQUEST_METHOD'];
     //allow POST with _method=PUT (needed for multipart edits)
