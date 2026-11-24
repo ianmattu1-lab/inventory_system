@@ -10,7 +10,7 @@ function format_product($p) {
     $p['min_stock_threshold'] = (int)$p['min_stock_threshold'];
     $p['is_low_stock'] = $p['quantity'] < $p['min_stock_threshold'];
     if ($p['image_path']) {
-        $p['image_url'] = 'http://' . $_SERVER['HTTP_HOST'] . '/inventory/' . $p['image_path'];
+        $p['image_url'] = 'http://' . $_SERVER['HTTP_HOST'] . '/inventory_system/' . $p['image_path'];
     } else {
         $p['image_url'] = null;
     }
