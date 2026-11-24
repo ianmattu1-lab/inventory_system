@@ -1,5 +1,5 @@
 <?php
-include 'php/core/header.php';
+include 'core/header.php';
 
 $logs = run_query($conn, "SELECT l.*, p.name AS product_name, p.sku, u.full_name
         FROM stock_logs l
@@ -25,4 +25,4 @@ $logs = run_query($conn, "SELECT l.*, p.name AS product_name, p.sku, u.full_name
   </tbody>
 </table>
 </div></div>
-<?php include 'php/core/footer.php'; ?>
+<?php include 'core/footer.php'; ?>
