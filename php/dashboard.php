@@ -1,5 +1,5 @@
 <?php
-include 'php/core/header.php';
+include 'core/header.php';
 
 $kpi = run_query($conn, "SELECT COUNT(*) AS total,
         COALESCE(SUM(unit_price * quantity), 0) AS total_value,
@@ -42,4 +42,4 @@ $low_items = run_query($conn, "SELECT p.*, c.name AS category_name FROM products
   </table>
   </div>
 </div>
-<?php include 'php/core/footer.php'; ?>
+<?php include 'core/footer.php'; ?>
