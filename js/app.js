@@ -38,3 +38,10 @@ document.querySelectorAll('.delete-btn').forEach(function (btn) {
     document.getElementById('delete_name').textContent = btn.dataset.name;
   });
 });
+
+// ---------- Highlight the current page in the navbar ----------
+document.querySelectorAll('.navbar .nav-link').forEach(function (link) {
+  if (window.location.pathname.endsWith(link.getAttribute('href'))) {
+    link.classList.add('active');
+  }
+});
