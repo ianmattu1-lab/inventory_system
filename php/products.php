@@ -1,5 +1,5 @@
 <?php
-include 'php/core/header.php';
+include 'core/header.php';
 
 // Load categories into an array (used by filter, add form, edit form, excel button)
 $cats = [];
@@ -18,8 +18,8 @@ $products = run_query($conn, "SELECT p.*, c.name AS category_name FROM products 
 <div class="d-flex flex-wrap gap-2 justify-content-between align-items-center mb-3">
   <h3 class="mb-0">Inventory</h3>
   <div class="d-flex flex-wrap gap-2">
-    <a class="btn btn-outline-danger" href="php/ac/export_pdf.php">Download Valuation &amp; Low-Stock PDF</a>
-    <form class="d-flex gap-2" action="php/ac/export_excel.php" method="get">
+    <a class="btn btn-outline-danger" href="ac/export_pdf.php">Download Valuation &amp; Low-Stock PDF</a>
+    <form class="d-flex gap-2" action="ac/export_excel.php" method="get">
       <select name="category_id" class="form-select">
         <option value="">All categories</option>
         <?php echo $cat_options; ?>
@@ -53,7 +53,7 @@ $products = run_query($conn, "SELECT p.*, c.name AS category_name FROM products 
         data-search="<?php echo h(strtolower($p['name'] . ' ' . $p['sku'])); ?>">
       <td>
         <?php if ($p['image_path']) { ?>
-          <img class="thumb" src="<?php echo h($p['image_path']); ?>">
+          <img class="thumb" src="..<?php echo h($p['image_path']); ?>">
         <?php } else { ?>
           <div class="thumb"></div>
         <?php } ?>
@@ -89,7 +89,7 @@ $products = run_query($conn, "SELECT p.*, c.name AS category_name FROM products 
 
 <!-- ADD MODAL -->
 <div class="modal fade" id="addModal" tabindex="-1"><div class="modal-dialog modal-lg"><div class="modal-content">
-  <form method="post" action="php/ac/product_add.php" enctype="multipart/form-data">
+  <form method="post" action="ac/product_add.php" enctype="multipart/form-data">
     <div class="modal-header"><h5 class="modal-title">Add product</h5>
       <button type="button" class="btn-close" data-bs-dismiss="modal"></button></div>
     <div class="modal-body row g-3">
@@ -110,7 +110,7 @@ $products = run_query($conn, "SELECT p.*, c.name AS category_name FROM products 
 
 <!-- EDIT MODAL -->
 <div class="modal fade" id="editModal" tabindex="-1"><div class="modal-dialog modal-lg"><div class="modal-content">
-  <form method="post" action="php/ac/product_edit.php" enctype="multipart/form-data">
+  <form method="post" action="ac/product_edit.php" enctype="multipart/form-data">
     <input type="hidden" name="id" id="edit_id">
     <div class="modal-header"><h5 class="modal-title">Edit product</h5>
       <button type="button" class="btn-close" data-bs-dismiss="modal"></button></div>
@@ -132,7 +132,7 @@ $products = run_query($conn, "SELECT p.*, c.name AS category_name FROM products 
 
 <!-- DELETE MODAL -->
 <div class="modal fade" id="deleteModal" tabindex="-1"><div class="modal-dialog"><div class="modal-content">
-  <form method="post" action="php/ac/product_delete.php">
+  <form method="post" action="ac/product_delete.php">
     <input type="hidden" name="id" id="delete_id">
     <div class="modal-header"><h5 class="modal-title">Delete product</h5>
       <button type="button" class="btn-close" data-bs-dismiss="modal"></button></div>
@@ -141,4 +141,4 @@ $products = run_query($conn, "SELECT p.*, c.name AS category_name FROM products 
       <button class="btn btn-danger">Delete</button></div>
   </form>
 </div></div></div>
-<?php include 'php/core/footer.php'; ?>
+<?php include 'core/footer.php'; ?>
