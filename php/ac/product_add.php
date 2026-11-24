@@ -1,6 +1,6 @@
 <?php
 session_start();
-if (!isset($_SESSION['user_id'])) { header('Location: ../../login.php'); exit; }
+if (!isset($_SESSION['user_id'])) { header('Location: ../login.php'); exit; }
 include __DIR__ . '/../core/db.php';
 
 $root = __DIR__ . '/../../';   // the inventory folder on disk
@@ -44,4 +44,4 @@ try {
     if ($image_path) { unlink($root . $image_path); }
     $_SESSION['msg'] = ['danger', 'Could not save. That SKU may already exist.'];
 }
-header('Location: ../../products.php');
+header('Location: ../products.php');

@@ -1,6 +1,6 @@
 <?php
 session_start();
-if (!isset($_SESSION['user_id'])) { header('Location: ../../login.php'); exit; }
+if (!isset($_SESSION['user_id'])) { header('Location: ../login.php'); exit; }
 include __DIR__ . '/../core/db.php';
 require __DIR__ . '/../../vendor/autoload.php';
 

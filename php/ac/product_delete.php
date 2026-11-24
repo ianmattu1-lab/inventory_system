@@ -1,6 +1,6 @@
 <?php
 session_start();
-if (!isset($_SESSION['user_id'])) { header('Location: ../../login.php'); exit; }
+if (!isset($_SESSION['user_id'])) { header('Location: ../login.php'); exit; }
 include __DIR__ . '/../core/db.php';
 
 $root = __DIR__ . '/../../';
@@ -21,4 +21,4 @@ if ($p) {
     }
     $_SESSION['msg'] = ['success', 'Product deleted.'];
 }
-header('Location: ../../products.php');
+header('Location: ../products.php');

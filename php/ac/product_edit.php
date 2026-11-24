@@ -1,6 +1,6 @@
 <?php
 session_start();
-if (!isset($_SESSION['user_id'])) { header('Location: ../../login.php'); exit; }
+if (!isset($_SESSION['user_id'])) { header('Location: ../login.php'); exit; }
 include __DIR__ . '/../core/db.php';
 
 $root = __DIR__ . '/../../';
@@ -64,4 +64,4 @@ try {
 } catch (mysqli_sql_exception $e) {
     $_SESSION['msg'] = ['danger', 'Could not update. That SKU may already exist.'];
 }
-header('Location: ../../products.php');
+header('Location: ../products.php');
