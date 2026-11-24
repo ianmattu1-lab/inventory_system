@@ -1,6 +1,5 @@
 <?php
-include 'php/core/header.php';
-
+include 'core/header.php';
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     try {
         if ($_POST['action'] == 'add') {
@@ -53,4 +52,4 @@ $cats = run_query($conn, "SELECT c.*, (SELECT COUNT(*) FROM products p WHERE p.c
   </tbody>
 </table>
 </div></div>
-<?php include 'php/core/footer.php'; ?>
+<?php include 'core/footer.php'; ?>
