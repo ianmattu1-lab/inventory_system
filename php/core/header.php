@@ -25,7 +25,7 @@ function nav_active($file, $current) {
 <body>
 <nav class="navbar navbar-expand-lg navbar-dark">
   <div class="container-fluid">
-    <a class="navbar-brand" href="dashboard.php"><span class="brand-mark"><img src="../img.logo.jpg" class="brand-logo" alt=""></span> Unified Inventory</a>
+    <a class="navbar-brand" href="dashboard.php"><span class="brand-mark"><img src="../img/logo.jpg" class="brand-logo" alt=""></span> Unified Inventory</a>
     <button class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#menu">
       <span class="navbar-toggler-icon"></span>
     </button>
