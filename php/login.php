@@ -39,7 +39,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
   
   <form method="post" class="login-form">
     
-    <<div class="login-avatar">
+    <div class="login-avatar">
       <svg width="46" height="46" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round">
         <circle cx="12" cy="8" r="4"></circle>
         <path d="M4 21c0-4.4 3.6-7 8-7s8 2.6 8 7z"></path>
