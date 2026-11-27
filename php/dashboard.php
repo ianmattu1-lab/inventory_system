@@ -39,7 +39,6 @@ $low_items = run_query($conn, "SELECT p.*, c.name AS category_name FROM products
 <div class="page-head">
   <div>
     <h3 class="mb-1">Dashboard</h3>
-    <p>Here you can get insights about your inventory.</p>
   </div>
   <p><?php echo date('l, F j, Y'); ?></p>
 </div>
