@@ -53,7 +53,7 @@ $products = run_query($conn, "SELECT p.*, c.name AS category_name FROM products 
         data-search="<?php echo h(strtolower($p['name'] . ' ' . $p['sku'])); ?>">
       <td>
         <?php if ($p['image_path']) { ?>
-          <img class="thumb" src="..<?php echo h($p['image_path']); ?>">
+          <img class="thumb" src="../<?php echo h($p['image_path']); ?>">
         <?php } else { ?>
           <div class="thumb"></div>
         <?php } ?>
