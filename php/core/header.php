@@ -10,7 +10,6 @@ $current = basename($_SERVER['SCRIPT_NAME']);
 function nav_active($file, $current) {
     return $file == $current ? ' active' : '';
 }
-$initial = strtoupper(substr($_SESSION['full_name'], 0, 1));
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -18,6 +17,7 @@ $initial = strtoupper(substr($_SESSION['full_name'], 0, 1));
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Unified Inventory</title>
+  <link rel="icon" href="../img/logo.jpg">
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
   <link href="../css/style.css" rel="stylesheet">
@@ -25,7 +25,7 @@ $initial = strtoupper(substr($_SESSION['full_name'], 0, 1));
 <body>
 <nav class="navbar navbar-expand-lg navbar-dark">
   <div class="container-fluid">
-    <a class="navbar-brand" href="dashboard.php"><span class="brand-mark">U</span>Unified Inventory</a>
+    <a class="navbar-brand" href="dashboard.php"><span class="brand-mark"><img src="../img.logo.jpg" class="brand-logo" alt=""></span> Unified Inventory</a>
     <button class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#menu">
       <span class="navbar-toggler-icon"></span>
     </button>
@@ -37,7 +37,12 @@ $initial = strtoupper(substr($_SESSION['full_name'], 0, 1));
         <li class="nav-item"><a class="nav-link<?php echo nav_active('logs.php', $current); ?>" href="logs.php">Audit Log</a></li>
       </ul>
       <div class="user-chip">
-        <span class="user-avatar"><?php echo h($initial); ?></span>
+        <span class="user-avatar">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="12" cy="8" r="4"></circle>
+            <path d="M4 21c0-4.4 3.6-7 8-7s8 2.6 8 7z"></path>
+          </svg>
+        </span>
         <div>
           <strong><?php echo h($_SESSION['full_name']); ?></strong>
           <small><?php echo h(ucfirst($_SESSION['role'])); ?></small>
