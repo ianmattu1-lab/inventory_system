@@ -3,7 +3,7 @@ session_start();
 if (!isset($_SESSION['user_id'])) { header('Location: ../login.php'); exit; }
 include __DIR__ . '/../core/db.php';
 
-$root = __DIR__ . '/../../';   // the inventory folder on disk
+$root = __DIR__ . '/../../';
 
 $name = trim($_POST['name']);
 $sku = trim($_POST['sku']);
