@@ -31,4 +31,4 @@ function run_query($conn, $sql, $types = '', $params = []) {
 
 $conn = new mysqli('localhost', 'root', '', 'inventory_system');
 $conn->set_charset('utf8mb4');
-$conn->("SET time_zone = '-06:00"")
+$conn->query("SET time_zone = '-06:00'");
