@@ -280,3 +280,13 @@ body.login-page {
   letter-spacing: 0.08em;
   color: rgba(255, 255, 255, 0.75);
 }
+
+/*navbar logo*/
+.brand-logo {
+  width: 36px;
+  height: 36px;
+  border-radius: 9px;
+  object-fit: contain;
+  background: #fff;
+  padding: 2px;
+}
